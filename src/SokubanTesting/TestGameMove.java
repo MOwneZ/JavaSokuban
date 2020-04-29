@@ -111,6 +111,17 @@ class TestGameMove {
 				+ "######" + "\n" + "move 2" + "\n" + "completed 1 of 2" + "\n";
 		String actualLevel = this.game.toString();
 		assertEquals(expectedLevel, actualLevel);
+	}
+	
+	@Test
+	void testGameMove_pushCrateToWall() {
+		game.move(Direction.UP);
+		game.move(Direction.LEFT);
+		game.move(Direction.LEFT);
+		String expectedLevel = "Test1" + "\n" + "######" + "\n" + "#Xw+.#" + "\n" + "#....#" + "\n" + "#....#" + "\n"
+				+ "######" + "\n" + "move 3" + "\n" + "completed 1 of 2" + "\n";
+		String actualLevel = this.game.toString();
+		assertEquals(expectedLevel, actualLevel);
 
 	}
 }
